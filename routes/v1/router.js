@@ -2,6 +2,23 @@ const router = require('express').Router();
 const postController = require('../../controllers/v1/postController.js');
 const getController = require('../../controllers/v1/getController.js');
 
+function auth(req, res, next) {
+    let { authorization } = req.headers;
+
+    if (authorization) {
+        let token = authorization.split('')[1];
+        if (token) {
+            return(next);
+        }
+    }
+
+    return res.status(401).json({
+        status: false,
+        message: Unauthorized,
+        data: null
+    })
+}
+
 router.post('/v1/Uregist', postController.registerUser);
 router.post('/v1/Aregist', postController.registerAccount);
 router.post('/v1/transfer', postController.transfer);

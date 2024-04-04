@@ -115,7 +115,8 @@ module.exports = {
             let transaction = await prisma.transactions.findUnique({
                 where: {id: transactionId},
                 include:{
-                    bank_account: true
+                    source_account:true,
+                    destination_account:true
                 }
             });
 

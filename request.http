@@ -3,12 +3,12 @@ POST http://localhost:3000/api/v1/Uregist
 Content-Type: application/json
 
 {
-    "name": "Bronya",
-    "email": "nambronya@kmail.com",
-    "password": "starrail",
+    "name": "Kirifuji",
+    "email": "kirifujisaan@bmail.com",
+    "password": "blueArchive",
     "identity_type": "Paspor",
     "identity_number": "2234452",
-    "address": "Belobolg, Jarilo IV"
+    "address": "Trinity, Tea party"
 }
 
 ### index users
@@ -16,7 +16,7 @@ GET http://localhost:3000/api/v1/users
 
 
 ### detail users
-GET http://localhost:3000/api/v1/user/5
+GET http://localhost:3000/api/v1/user/2
 
 
 ### new bank account to existed user
@@ -24,9 +24,9 @@ POST http://localhost:3000/api/v1/Aregist
 Content-Type: application/json
 
 {
-    "users_id": "8",
-    "bank_name": "Bank Tabungan IPC",
-    "bank_account_number": "332211278",
+    "users_id": "2",
+    "bank_name": "Bank Tabungan Tea Party",
+    "bank_account_number": "332244278",
     "balance": 1000000
 }
 
@@ -43,9 +43,9 @@ POST http://localhost:3000/api/v1/transfer
 Content-Type: application/json
 
 {
-    "source_account_id": "6",
-    "destination_account_id": "5",
-    "amount": 10001
+    "source_account_id": "1",
+    "destination_account_id": "2",
+    "amount": 1000
 }
 
 
@@ -54,4 +54,4 @@ GET http://localhost:3000/api/v1/transactions
 
 
 ### detail transaction
-GET http://localhost:3000/api/v1/transaction/5
+GET http://localhost:3000/api/v1/transaction/1
