@@ -1,9 +1,9 @@
-name: Deploy to Dev Environment
+name: Deploy to Production Environment
 
 on:
   push:
     branchees:
-      - "develop"
+      - "main"
 
 jobs:
   deploy:
@@ -32,4 +32,4 @@ jobs:
       - name: Deploy to Railway
         run: railway up --service ${{secrests.RAILWAY_SERVICE_ID}}
         env:
-          RAILWAY_TOKEN: ${{secrests.RAILWAY_DEV_TOKEN}}
+          RAILWAY_TOKEN: ${{secrests.RAILWAY_PROD_TOKEN}}
